@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Quiz Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-header">
+            <h1>🐍 Python Quiz Chatbot</h1>
+            <p>Test your Python knowledge!</p>
+        </div>
+        
+        <div class="quiz-setup" id="quizSetup">
+            <h2>Welcome to Python Quiz!</h2>
+            <p>Choose your difficulty level:</p>
+            <select id="levelSelect" class="level-select">
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+            
+            <p>Number of questions:</p>
+            <select id="questionCount" class="question-count">
+                <option value="3">3 Questions</option>
+                <option value="5" selected>5 Questions</option>
+                <option value="7">7 Questions</option>
+                <option value="10">10 Questions</option>
+            </select>
+            
+            <button onclick="startQuiz()" class="start-btn">Start Quiz</button>
+        </div>
+        
+        <div class="chat-container" id="chatContainer" style="display: none;">
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will appear here -->
+            </div>
+            
+            <div class="options-container" id="optionsContainer">
+                <!-- Options will appear here -->
+            </div>
+            
+            <div class="explanation-box" id="explanationBox" style="display: none;">
+                <!-- Explanation will appear here -->
+            </div>
+            
+            <div class="next-btn-container">
+                <button onclick="nextQuestion()" class="next-btn" id="nextBtn" style="display: none;">Next Question</button>
+                <button onclick="restartQuiz()" class="restart-btn" id="restartBtn" style="display: none;">Start New Quiz</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
