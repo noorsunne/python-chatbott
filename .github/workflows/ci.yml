@@ -23,5 +23,5 @@ jobs:
           pip install flask
           pip install flask-cors
 
-      - name: Test CI
-        run: echo "CI working"
+      - name: Run tests
+        run: python test.py
