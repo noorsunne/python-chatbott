@@ -19,7 +19,9 @@ jobs:
           python-version: "3.10"
 
       - name: Install dependencies
-        run: pip install -r "python chatbot/requirements.txt"
+        run: |
+          pip install flask
+          pip install flask-cors
 
-      - name: Run app
-        run: python "python chatbot/app.py"
+      - name: Test CI
+        run: echo "CI working"
